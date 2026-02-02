@@ -6,6 +6,7 @@
 #Authored by Birk Jederstrom
 
 import os
+import subprocess
 
 x = 0
 
@@ -15,7 +16,10 @@ def bruteforce():
     
     y = str(x)
     z = y.zfill(4)
-    print("unzip -P '" + z + "' archive.zip")
+    
+    subprocess.run(["unzip", "-P", "'", z, "'", "Lab_2.zip"])
+
+    #print("unzip -P '" + z + "' archive.zip")
 
 x = 0
 while x < 9999:
