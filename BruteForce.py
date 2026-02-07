@@ -9,19 +9,20 @@ import os
 import subprocess
 
 x = 0
-
+PassFound = True
 #Non
 
-def bruteforce():
-    
+for x in range(9999):
     y = str(x)
     z = y.zfill(4)
-    
-    subprocess.run(["unzip", "-P", "'", z, "'", "Lab_2.zip"])
 
-    #print("unzip -P '" + z + "' archive.zip")
+    crack = subprocess.run(
+        ["unzip", "-P", z, "-qq", "archive.zip"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
 
-x = 0
-while x < 9999:
-    x += 1
-    bruteforce()
+    if crack.returncode == 0:
+        print(f"Password found: {z}")
+        break
+
