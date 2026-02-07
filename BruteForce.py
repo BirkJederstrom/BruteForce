@@ -9,15 +9,13 @@ import os
 import subprocess
 
 x = 0
-PassFound = True
-#Non
 
 for x in range(9999):
     y = str(x)
     z = y.zfill(4)
 
     crack = subprocess.run(
-        ["unzip", "-P", z, "-qq", "archive.zip"],
+        ["unzip", "-P", z, "-tqq", "archive.zip"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL
     )
@@ -26,3 +24,4 @@ for x in range(9999):
         print(f"Password found: {z}")
         break
 
+    #test

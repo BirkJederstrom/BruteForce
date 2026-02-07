@@ -2,4 +2,7 @@
   <Project Path="BruteForce.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="259599e3-e709-4c59-8d58-83c3cf56572a">
     <Build Project="false" />
   </Project>
+  <Project Path="CrackShaPin/CrackShaPin.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="59471854-694f-4455-bc5f-508d331b4405">
+    <Build Project="false" />
+  </Project>
 </Solution>
