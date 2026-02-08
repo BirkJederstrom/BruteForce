@@ -1,9 +1,9 @@
 import hashlib
 
-h = 'c439c61c41b4830422a0068df6f591ed'
-salt = 'cb63'
+h = '60f9f675974e936dd4b1032280a290da16ea110ed985d3cc3d5cd968fe5ab7ed'
+salt = 'e098'
 
-file_path = '1.txt'
+file_path = '2.txt'
 EasterEgg = True
 
 try:
@@ -13,7 +13,7 @@ try:
 
             D = (line.strip() + salt)
 
-            if hashlib.md5(D.encode()).hexdigest() == h:
+            if hashlib.sha3_256(D.encode()).hexdigest() == h:
                 print("found pass + salt: ", D)
                 password = D.replace(salt, "")
                 print("The Password: ", password)
@@ -26,3 +26,4 @@ except:
 
 if EasterEgg:
     print("Go phishing!")
+
