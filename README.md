@@ -10,6 +10,22 @@ The author takes no responsibility if this script is used maliciously
 
 Run in correct folder containing the zip "Lab_2.zip"
 
+## Remember
+
+find ~/ -name "instruction"
+find . -name "filename"
+find . -type f -name 'btree*.c'
+
+for ((count=1; count<=9999; count++)); do
+  password=$(printf "%04d" "$count")
+
+  if unzip -P "$password" archive.zip >/dev/null 2>&1; then
+    echo "Password found: $password"
+    break
+  fi
+done
+
+
 
 
 Authored by Birk Jederström
